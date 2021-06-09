@@ -1,2 +1,6 @@
 # Avanade-SubTCSE-Projeto
-Projeto criado duarnte o treinamento full stack
+Projeto criado durante o treinamento full stack
+
+## dia 1
+
+> Criação do projeto
