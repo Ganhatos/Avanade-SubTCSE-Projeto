@@ -1,0 +1,12 @@
+ö
+êC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Application\AutoMapperConfigs\Profiles\Configs.csutf-8≥
+©C:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Application\AutoMapperConfigs\Profiles\EmployeeRole\EmployeeRoleProfile.csutf-8´
+°C:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Application\AutoMapperConfigs\Profiles\Employee\EmployeeProfile.csutf-8à
+C:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Application\Dtos\Base\BaseDto.csutf-8ô
+èC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Application\Dtos\EmployeeRole\EmployeeRoleDto.csutf-8ë
+áC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Application\Dtos\Employee\EmployeeDto.csutf-8ß
+ùC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Application\Interfaces\EmployeeRole\IEmployeeRoleAppService.csutf-8ü
+ïC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Application\Interfaces\Employee\IEmployeeAppService.csutf-8§
+öC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Application\Services\EmployeeRole\EmployeeRoleAppService.csutf-8∂
+™C:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Application\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csutf-8ª
+ØC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Application\obj\Debug\net5.0\Avanade.SubTCSE.Projeto.Application.AssemblyInfo.csutf-8

@@ -1,0 +1,16 @@
+á
+~C:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Aggregates\BaseEntity.csutf-8†
+ñC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Aggregates\EmployeeRole\Entities\EmployeeRole.csutf-8∏
+ÆC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Aggregates\EmployeeRole\Interfaces\Repository\IEmployeeRoleRepository.csutf-8≥
+©C:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Aggregates\EmployeeRole\Interfaces\Services\IEmployeeRoleService.csutf-8ß
+ùC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Aggregates\EmployeeRole\Services\EmployeeRoleService.csutf-8´
+°C:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Aggregates\EmployeeRole\Validators\EmployeeRoleValidator.csutf-8ò
+éC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Aggregates\Employee\Entities\Employee.csutf-8≤
+®C:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Aggregates\Employee\Interfaces\Repositories\IEmployeeRepository.csutf-8´
+°C:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Aggregates\Employee\Interfaces\Services\IEmployeeService.csutf-8ü
+ïC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Aggregates\Employee\Services\EmployeeService.csutf-8£
+ôC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Aggregates\Employee\Validators\EmployeeValidator.csutf-8í
+àC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Base\Repository\IBaseRepository.csutf-8ö
+êC:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\Base\Repository\MongoDB\IMongoDBContext.csutf-8±
+•C:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.csutf-8±
+•C:\Users\g.cunha.dos.santos\Desktop\Projects\curso-avanade\backend\src\Avanade.SubTCSE.Projeto.Domain\obj\Debug\net5.0\Avanade.SubTCSE.Projeto.Domain.AssemblyInfo.csutf-8
