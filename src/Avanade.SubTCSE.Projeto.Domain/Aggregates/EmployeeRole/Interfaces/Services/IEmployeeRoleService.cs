@@ -10,5 +10,7 @@ namespace Avanade.SubTCSE.Projeto.Domain.Aggregates.EmployeeRole.Interfaces.Serv
         Task<List<Entities.EmployeeRole>> GetAllAsync();
 
         Task<Entities.EmployeeRole> GetByIdAsync(string Id); //TODO: Trocar para generics
+
+        void DeleteById(string Id);
     }
 }

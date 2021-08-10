@@ -11,5 +11,7 @@ namespace Avanade.SubTCSE.Projeto.Application.Interfaces.EmployeeRole
         Task<List<EmployeeRoleDto>> FindAllEmployeeRoleAsync();
 
         Task<EmployeeRoleDto> GetByIdAsync(string id); //TODO: Generics
+
+        void DeleteById(string id);
     }
 }

@@ -3,6 +3,7 @@ using Avanade.SubTCSE.Projeto.Application.Interfaces.EmployeeRole;
 using Avanade.SubTCSE.Projeto.Application.Services.EmployeeRole;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Net.Mime;
 using System.Threading.Tasks;
@@ -36,7 +37,7 @@ namespace Avanade.SubTCSE.Projeto.Api.Controllers
                 return BadRequest(string.Join('\n', item.ValidationResult.Errors));
             }
 
-            return Ok();
+            return StatusCode(StatusCodes.Status201Created);
         }
 
         [HttpGet(Name = "EmployeeRoleGet")]
@@ -61,12 +62,40 @@ namespace Avanade.SubTCSE.Projeto.Api.Controllers
             return Ok(item);
         }
 
-        [HttpGet(template: "{id}")]
+        [HttpDelete(template: "{id}")]
+        [ProducesResponseType(typeof(EmployeeRoleDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteById(string id)
         {
-            //TODO: Desafio
+            try
+            {
+                _employeeRoleAppService.DeleteById(id);
 
-            throw new System.Exception();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.ToString());
+            }
+        }
+
+        [HttpPut(template: "{id}")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [Produces(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(EmployeeRoleDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateEmployeeRole([FromBody] EmployeeRoleDto employeeRoleDto)
+        {
+            // TODO: PUT
+
+            var item = await _employeeRoleAppService.AddEmployeeRoleAsync(employeeRoleDto);
+
+            if (!item.ValidationResult.IsValid)
+            {
+                return BadRequest(string.Join('\n', item.ValidationResult.Errors));
+            }
+
+            return StatusCode(StatusCodes.Status201Created);
         }
     }
 }

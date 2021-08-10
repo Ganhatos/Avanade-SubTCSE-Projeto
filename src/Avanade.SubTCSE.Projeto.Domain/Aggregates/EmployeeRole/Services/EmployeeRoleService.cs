@@ -39,6 +39,11 @@ namespace Avanade.SubTCSE.Projeto.Domain.Aggregates.EmployeeRole.Services
             return employeeRole;
         }
 
+        public void DeleteById(string Id)
+        {
+            _employeeRoleRepository.DeleteByIdAsync(Id);
+        }
+
         public async Task<List<Entities.EmployeeRole>> GetAllAsync()
         {
             return await _employeeRoleRepository.FindAllAsync();
