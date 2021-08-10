@@ -2,6 +2,7 @@
 using Avanade.SubTCSE.Projeto.Application.Dtos.EmployeeRole;
 using Avanade.SubTCSE.Projeto.Application.Interfaces.EmployeeRole;
 using Avanade.SubTCSE.Projeto.Domain.Aggregates.EmployeeRole.Interfaces.Services;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Avanade.SubTCSE.Projeto.Application.Services.EmployeeRole
@@ -31,6 +32,20 @@ namespace Avanade.SubTCSE.Projeto.Application.Services.EmployeeRole
 
             //devolver
             return itemDto;
+        }
+
+        public async Task<List<EmployeeRoleDto>> FindAllEmployeeRoleAsync()
+        {
+            var item = await _employeeRoleService.GetAllAsync();
+
+            return _mapper.Map<List<Domain.Aggregates.EmployeeRole.Entities.EmployeeRole>, List<EmployeeRoleDto>>(item);
+        }
+
+        public async Task<EmployeeRoleDto> GetByIdAsync(string id)
+        {
+            var item = await _employeeRoleService.GetByIdAsync(id);
+
+            return _mapper.Map<Domain.Aggregates.EmployeeRole.Entities.EmployeeRole, EmployeeRoleDto>(item);
         }
     }
 }
