@@ -1,16 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Avanade.SubTCSE.Projeto.Domain.Base.Services;
 
 namespace Avanade.SubTCSE.Projeto.Domain.Aggregates.EmployeeRole.Interfaces.Services
 {
-    public interface IEmployeeRoleService
+    public interface IEmployeeRoleService : IBaseService<Entities.EmployeeRole, string>
     {
-        Task<Entities.EmployeeRole> AddEmployeeRoleAsync(Entities.EmployeeRole employeeRole);
-
-        Task<List<Entities.EmployeeRole>> GetAllAsync();
-
-        Task<Entities.EmployeeRole> GetByIdAsync(string Id); //TODO: Trocar para generics
-
-        void DeleteById(string Id);
     }
 }

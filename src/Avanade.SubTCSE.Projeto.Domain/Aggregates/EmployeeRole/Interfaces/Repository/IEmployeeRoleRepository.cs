@@ -4,6 +4,5 @@ namespace Avanade.SubTCSE.Projeto.Domain.Aggregates.EmployeeRole.Interfaces.Repo
 {
     public interface IEmployeeRoleRepository : IBaseRepository<Entities.EmployeeRole, string>
     {
-
     }
 }

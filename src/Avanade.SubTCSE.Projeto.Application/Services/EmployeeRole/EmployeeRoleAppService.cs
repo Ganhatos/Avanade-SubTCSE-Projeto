@@ -34,9 +34,9 @@ namespace Avanade.SubTCSE.Projeto.Application.Services.EmployeeRole
             return itemDto;
         }
 
-        public void DeleteById(string id)
+        public async Task DeleteById(string id)
         {
-            _employeeRoleService.DeleteById(id);
+            await _employeeRoleService.DeleteById(id);
         }
 
         public async Task<List<EmployeeRoleDto>> FindAllEmployeeRoleAsync()
@@ -51,6 +51,13 @@ namespace Avanade.SubTCSE.Projeto.Application.Services.EmployeeRole
             var item = await _employeeRoleService.GetByIdAsync(id);
 
             return _mapper.Map<Domain.Aggregates.EmployeeRole.Entities.EmployeeRole, EmployeeRoleDto>(item);
+        }
+
+        public async Task UpdateByIdAsync(EmployeeRoleDto employeeRoleDto)
+        {
+            var itemDomain = _mapper.Map<EmployeeRoleDto, Domain.Aggregates.EmployeeRole.Entities.EmployeeRole>(employeeRoleDto);
+
+            await _employeeRoleService.UpdateByIdAsync(itemDomain);
         }
     }
 }

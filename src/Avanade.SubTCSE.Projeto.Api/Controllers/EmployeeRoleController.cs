@@ -65,11 +65,11 @@ namespace Avanade.SubTCSE.Projeto.Api.Controllers
         [HttpDelete(template: "{id}")]
         [ProducesResponseType(typeof(EmployeeRoleDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteById(string id)
+        public virtual async Task<IActionResult> DeleteById(string id)
         {
             try
             {
-                _employeeRoleAppService.DeleteById(id);
+                await _employeeRoleAppService.DeleteById(id);
 
                 return Ok();
             }
@@ -81,21 +81,21 @@ namespace Avanade.SubTCSE.Projeto.Api.Controllers
 
         [HttpPut(template: "{id}")]
         [Consumes(MediaTypeNames.Application.Json)]
-        [Produces(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(typeof(EmployeeRoleDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateEmployeeRole([FromBody] EmployeeRoleDto employeeRoleDto)
+        public async Task<IActionResult> UpdateEmployeeRole(string id, [FromBody] EmployeeRoleDto employeeRoleDto)
         {
-            // TODO: PUT
-
-            var item = await _employeeRoleAppService.AddEmployeeRoleAsync(employeeRoleDto);
-
-            if (!item.ValidationResult.IsValid)
+            try
             {
-                return BadRequest(string.Join('\n', item.ValidationResult.Errors));
-            }
+                employeeRoleDto.Identificador = id;
+                await _employeeRoleAppService.UpdateByIdAsync(employeeRoleDto);
 
-            return StatusCode(StatusCodes.Status201Created);
+                return StatusCode(StatusCodes.Status204NoContent);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.ToString());
+            }
         }
     }
 }

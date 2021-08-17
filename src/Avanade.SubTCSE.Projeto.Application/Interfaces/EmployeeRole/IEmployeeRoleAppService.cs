@@ -1,4 +1,5 @@
 ﻿using Avanade.SubTCSE.Projeto.Application.Dtos.EmployeeRole;
+using Avanade.SubTCSE.Projeto.Domain.Base.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,6 +13,8 @@ namespace Avanade.SubTCSE.Projeto.Application.Interfaces.EmployeeRole
 
         Task<EmployeeRoleDto> GetByIdAsync(string id); //TODO: Generics
 
-        void DeleteById(string id);
+        Task DeleteById(string id);
+
+        Task UpdateByIdAsync(EmployeeRoleDto employeeRoleDto);
     }
 }

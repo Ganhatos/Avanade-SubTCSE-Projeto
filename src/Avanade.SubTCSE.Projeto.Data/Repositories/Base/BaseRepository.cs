@@ -41,11 +41,21 @@ namespace Avanade.SubTCSE.Projeto.Infra.Data.Repositories.Base
             return resultado.FirstOrDefault();
         }
 
-        public async void DeleteByIdAsync(Tid Id)
+        public async Task DeleteByIdAsync(Tid Id)
         {
-            var deleteFilter = Builders<TEntity>.Filter.Eq("_id", Id);
+            var filter = Builders<TEntity>.Filter.Eq("_id", Id);
 
-            await _collection.DeleteOneAsync(deleteFilter);
+            await _collection.DeleteOneAsync(filter);
+        }
+
+        public async Task UpdateByIdAsync(TEntity entity)
+        {
+            var filter = Builders<TEntity>.Filter.Eq("_id", entity.Id);
+            await _collection.ReplaceOneAsync(filter, entity);
+
+            //var update = Builders<TEntity>.Update.Set("roleName", entity);
+
+            //await _collection.UpdateOneAsync(filter, update);
         }
     }
 }
