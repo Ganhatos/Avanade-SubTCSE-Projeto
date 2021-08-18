@@ -51,11 +51,8 @@ namespace Avanade.SubTCSE.Projeto.Infra.Data.Repositories.Base
         public async Task UpdateByIdAsync(TEntity entity)
         {
             var filter = Builders<TEntity>.Filter.Eq("_id", entity.Id);
+
             await _collection.ReplaceOneAsync(filter, entity);
-
-            //var update = Builders<TEntity>.Update.Set("roleName", entity);
-
-            //await _collection.UpdateOneAsync(filter, update);
         }
     }
 }

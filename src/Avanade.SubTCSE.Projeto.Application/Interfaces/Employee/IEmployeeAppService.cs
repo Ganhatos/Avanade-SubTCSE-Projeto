@@ -1,10 +1,9 @@
-﻿using Avanade.SubTCSE.Projeto.Application.Dtos.Employee;
-using System.Threading.Tasks;
+﻿using Avanade.SubTCSE.Projeto.Application.Base.Interfaces;
+using Avanade.SubTCSE.Projeto.Application.Dtos.Employee;
 
 namespace Avanade.SubTCSE.Projeto.Application.Interfaces.Employee
 {
-    public interface IEmployeeAppService
+    public interface IEmployeeAppService : IBaseAppService<EmployeeDto, string>
     {
-        Task<EmployeeDto> AddEmployeeAsync(EmployeeDto employeeDto);
     }
 }

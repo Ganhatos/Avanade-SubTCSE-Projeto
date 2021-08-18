@@ -11,7 +11,7 @@ namespace Avanade.SubTCSE.Projeto.Domain.Base.Services
 
         Task<List<TEntity>> GetAllAsync();
 
-        Task<TEntity> GetByIdAsync(Tid Id); //TODO: Verificar essa troca para generics
+        Task<TEntity> GetByIdAsync(Tid Id);
 
         Task DeleteById(Tid Id);
 

@@ -19,7 +19,7 @@ namespace Avanade.SubTCSE.Projeto.Application.Services.EmployeeRole
             _employeeRoleService = employeeRoleService;
         }
 
-        public async Task<EmployeeRoleDto> AddEmployeeRoleAsync(EmployeeRoleDto employeeRoleDto)
+        public async Task<EmployeeRoleDto> AddAsync(EmployeeRoleDto employeeRoleDto)
         {
             //mapear
             var itemDomain = _mapper.Map<EmployeeRoleDto, Domain.Aggregates.EmployeeRole.Entities.EmployeeRole>(employeeRoleDto);
@@ -39,7 +39,7 @@ namespace Avanade.SubTCSE.Projeto.Application.Services.EmployeeRole
             await _employeeRoleService.DeleteById(id);
         }
 
-        public async Task<List<EmployeeRoleDto>> FindAllEmployeeRoleAsync()
+        public async Task<List<EmployeeRoleDto>> FindAllAsync()
         {
             var item = await _employeeRoleService.GetAllAsync();
 

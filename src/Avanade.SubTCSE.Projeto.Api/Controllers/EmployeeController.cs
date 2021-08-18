@@ -1,6 +1,5 @@
-﻿using Avanade.SubTCSE.Projeto.Application.Dtos.EmployeeRole;
-using Avanade.SubTCSE.Projeto.Application.Interfaces.EmployeeRole;
-using Avanade.SubTCSE.Projeto.Application.Services.EmployeeRole;
+﻿using Avanade.SubTCSE.Projeto.Application.Dtos.Employee;
+using Avanade.SubTCSE.Projeto.Application.Interfaces.Employee;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,62 +13,59 @@ namespace Avanade.SubTCSE.Projeto.Api.Controllers
     [ApiVersion("1", Deprecated = false)]
     [ApiController]
     [ApiExplorerSettings(GroupName = "v1")]
-    public class EmployeeRoleController : ControllerBase
+    public class EmployeeController : ControllerBase
     {
-        private readonly IEmployeeRoleAppService _employeeRoleAppService;
+        private readonly IEmployeeAppService _employeeAppService;
 
-        public EmployeeRoleController(IEmployeeRoleAppService employeeRoleAppService)
+        public EmployeeController(IEmployeeAppService employeeAppService)
         {
-            _employeeRoleAppService = employeeRoleAppService;
+            _employeeAppService = employeeAppService;
         }
 
-        [HttpPost(Name = "EmployeeRole")]
+        [HttpPost(Name = "Employee")]
         [Consumes(MediaTypeNames.Application.Json)]
         [Produces(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(typeof(EmployeeRoleDto), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(EmployeeDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> CreateEmployeeRole([FromBody] EmployeeRoleDto employeeRoleDto)
+        public async Task<IActionResult> CreateEmployee([FromBody] EmployeeDto employeeDto)
         {
-            var item = await _employeeRoleAppService.AddAsync(employeeRoleDto);
+            var item = await _employeeAppService.AddAsync(employeeDto);
 
-            if (!item.ValidationResult.IsValid)
-            {
-                return BadRequest(string.Join('\n', item.ValidationResult.Errors));
-            }
-
-            return StatusCode(StatusCodes.Status201Created);
+            return !item.ValidationResult.IsValid
+                ? BadRequest(string.Join('\n', item.ValidationResult.Errors))
+                : StatusCode(StatusCodes.Status201Created);
         }
 
-        [HttpGet(Name = "EmployeeRoleGet")]
+        [HttpGet(Name = "EmployeeGet")]
         [Produces(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(typeof(List<EmployeeRoleDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<EmployeeDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAllEmployeeRole()
+        public async Task<IActionResult> GetAll()
         {
-            var item = await _employeeRoleAppService.FindAllAsync();
+            var item = await _employeeAppService.FindAllAsync();
 
             return Ok(item);
         }
 
         [HttpGet(template: "{id}")]
         [Produces(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(typeof(EmployeeRoleDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(EmployeeDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetById(string id)
         {
-            var item = await _employeeRoleAppService.GetByIdAsync(id);
+            var item = await _employeeAppService.GetByIdAsync(id);
 
             return Ok(item);
         }
 
         [HttpDelete(template: "{id}")]
-        [ProducesResponseType(typeof(EmployeeRoleDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(EmployeeDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public virtual async Task<IActionResult> DeleteById(string id)
         {
             try
             {
-                await _employeeRoleAppService.DeleteById(id);
+                await _employeeAppService.DeleteById(id);
 
                 return Ok();
             }
@@ -83,16 +79,16 @@ namespace Avanade.SubTCSE.Projeto.Api.Controllers
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateEmployeeRole(string id, [FromBody] EmployeeRoleDto employeeRoleDto)
+        public async Task<IActionResult> UpdateEmployeeRole(string id, [FromBody] EmployeeDto employeeDto)
         {
             try
             {
-                employeeRoleDto.Identificador = id;
-                await _employeeRoleAppService.UpdateByIdAsync(employeeRoleDto);
+                employeeDto.Identificador = id;
+                await _employeeAppService.UpdateByIdAsync(employeeDto);
 
-                if (!employeeRoleDto.ValidationResult.IsValid)
+                if (!employeeDto.ValidationResult.IsValid)
                 {
-                    return BadRequest(string.Join('\n', employeeRoleDto.ValidationResult.Errors));
+                    return BadRequest(string.Join('\n', employeeDto.ValidationResult.Errors));
                 }
 
                 return StatusCode(StatusCodes.Status204NoContent);

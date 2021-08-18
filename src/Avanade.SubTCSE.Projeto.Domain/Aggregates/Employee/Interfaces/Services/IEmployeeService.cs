@@ -1,9 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using Avanade.SubTCSE.Projeto.Domain.Base.Services;
 
 namespace Avanade.SubTCSE.Projeto.Domain.Aggregates.Employee.Interfaces.Services
 {
-    public interface IEmployeeService
+    public interface IEmployeeService : IBaseService<Entities.Employee, string>
     {
-        Task<Entities.Employee> AddEmployee(Entities.Employee employee);
     }
 }
