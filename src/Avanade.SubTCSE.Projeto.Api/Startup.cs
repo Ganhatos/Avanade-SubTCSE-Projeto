@@ -21,7 +21,8 @@ namespace Avanade.SubTCSE.Projeto.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllersWithViews();
+            services.AddRazorPages();
 
             services.AddApiVersioning(
                 options =>
@@ -56,6 +57,8 @@ namespace Avanade.SubTCSE.Projeto.Api
             }
             
             app.UseHttpsRedirection();
+            app.UseBlazorFrameworkFiles();
+            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -63,7 +66,9 @@ namespace Avanade.SubTCSE.Projeto.Api
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
                 endpoints.MapControllers();
+                endpoints.MapFallbackToFile("index.html");
             });
         }
     }
