@@ -1,7 +1,7 @@
 ﻿using Avanade.SubTCSE.Projeto.Domain.Base.Repository.MongoDB;
 using MongoDB.Driver;
 
-namespace Avanade.SubTCSE.Projeto.Data.Repositories.Base.MongoDB
+namespace Avanade.SubTCSE.Projeto.Infra.Data.Repositories.Base.MongoDB
 {
     public class MongoDBContext : IMongoDBContext
     {
@@ -9,8 +9,9 @@ namespace Avanade.SubTCSE.Projeto.Data.Repositories.Base.MongoDB
 
         public MongoDBContext()
         {
+
             MongoClientSettings mongoClientSettings = MongoClientSettings
-                .FromUrl(new MongoUrl("mongodb://mongo-gcds:wazhtcE1CuFWuGkxVKeYwtEdPNFWBwBIEWEgkq9IsIxXB2gf6Q0CZKJSqT1QnTqZKHF3LFnP9QffEQDSM3II6A==@mongo-gcds.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@mongo-gcds@"));
+                .FromUrl(new MongoUrl("mongodb://root:avanade-password@127.0.0.1:27017/admin?authSource=admin"));
 
             mongoClientSettings.SslSettings = 
                 new SslSettings()
