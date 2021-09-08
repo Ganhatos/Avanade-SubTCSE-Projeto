@@ -27,6 +27,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.SubTCSE.Projeto.Inf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.SubTCSE.Projeto.Infra.Data", "Avanade.SubTCSE.Projeto.Data\Avanade.SubTCSE.Projeto.Infra.Data.csproj", "{C8868692-6D20-4C5D-8F1F-55365AC3698B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{707FACAD-789C-435B-89CC-8DA76BA26BE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.SubTCSE.Projeto.Client", "Avanade.SubTCSE.Projeto.Client\Avanade.SubTCSE.Projeto.Client.csproj", "{69858171-E140-4B65-B21A-88B99062CE4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,10 @@ Global
 		{C8868692-6D20-4C5D-8F1F-55365AC3698B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8868692-6D20-4C5D-8F1F-55365AC3698B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8868692-6D20-4C5D-8F1F-55365AC3698B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69858171-E140-4B65-B21A-88B99062CE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69858171-E140-4B65-B21A-88B99062CE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69858171-E140-4B65-B21A-88B99062CE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69858171-E140-4B65-B21A-88B99062CE4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +73,7 @@ Global
 		{81DC7FE4-5BAD-455C-8B58-DD6A78866CD1} = {2D69DA81-9B65-4AD3-BC94-92574B8A061C}
 		{D1D7AFFE-0DF9-4053-B710-4720C0B24F2F} = {7120219B-F786-4F6B-8D35-1689960F598B}
 		{C8868692-6D20-4C5D-8F1F-55365AC3698B} = {211E1EF7-9FCC-45EC-B87B-28287A217C1D}
+		{69858171-E140-4B65-B21A-88B99062CE4D} = {707FACAD-789C-435B-89CC-8DA76BA26BE3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69B5BAB4-907E-45C4-894F-A5930C877F82}
